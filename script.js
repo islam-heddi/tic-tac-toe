@@ -1,11 +1,25 @@
 var operation = "X";
-var times = 0;
 
 const coperation = () => {
-    times++;
     verify();
     if(operation == "X") operation = "O";
     else operation ="X";
+    document.getElementById("splay").innerText = operation;
+    return;
+}
+
+var n;
+
+const result = (n) => {
+    if(n == 1){
+    document.getElementById("result").innerHTML = "player " + operation + " is the winner !";
+    }else{
+    document.getElementById("result").innerHTML = "No one wins";
+    }
+    document.getElementById("game").style.display = "none";
+    document.getElementById("r-refresh").style.display = "block";
+    document.getElementById("last").style.display = "flex";
+
 }
 
 const verify = () => {
@@ -38,8 +52,7 @@ const verify = () => {
     }
 
     if(check){
-        document.getElementById("result").innerHTML = "player " + operation + " is the winner !";
-        document.getElementById("game").style.display = "none";
+        result(1);
         return;
     }
     //the second check
@@ -48,8 +61,7 @@ const verify = () => {
         check = 1;
     }
     if(check){
-        document.getElementById("result").innerHTML = "player " + operation + " is the winner !";
-        document.getElementById("game").style.display = "none";
+        result(1);
         return;
     }
     //the third check
@@ -61,8 +73,7 @@ const verify = () => {
         }
     }
     if(check){
-        document.getElementById("result").innerHTML = "player " + operation + " is the winner !";
-        document.getElementById("game").style.display = "none";        
+        result(1);
         return;
     }
     //the fourth check
@@ -73,8 +84,7 @@ const verify = () => {
         }
     }
     if(check){
-        document.getElementById("result").innerHTML = "player " + operation + " is the winner !";
-        document.getElementById("game").style.display = "none";
+        result(1);
         return;
     }
     for(var i = 0; i < 3; i++){
@@ -86,8 +96,8 @@ const verify = () => {
         }
     }
     if(!check){
-        document.getElementById("result").innerHTML = "No one wins";
-        document.getElementById("game").style.display = "none";    }
+        result(2);
+    }
 }
 
 const place1 = () =>{

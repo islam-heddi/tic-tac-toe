@@ -5,20 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="xo.bmp" type="image/x-icon">
     <script src="script.js"></script>
 </head>
 <body>
-    <div id="game">
-        <h2>First player : X</h2>
-        <h2>Second player : O</h2>
-        <div class="ground">
-            <div class="c-1"><p id="num-1" onclick="place1()">1</p><p id="num-2" onclick="place2()">2</p><p id="num-3" onclick="place3()">3</p></div> 
-            <div class="c-2"><p id="num-4" onclick="place4()">4</p><p id="num-5" onclick="place5()">5</p><p id="num-6" onclick="place6()">6</p></div> 
-            <div class="c-3"><p id="num-7" onclick="place7()">7</p><p id="num-8" onclick="place8()">8</p><p id="num-9" onclick="place9()">9</p></div> 
+    <div class="app">
+        <div id="game">
+            <div class="ground">
+                <div class="c-1"><p id="num-1" onclick="place1()">1</p><p id="num-2" onclick="place2()">2</p><p id="num-3" onclick="place3()">3</p></div> 
+                <div class="c-2"><p id="num-4" onclick="place4()">4</p><p id="num-5" onclick="place5()">5</p><p id="num-6" onclick="place6()">6</p></div> 
+                <div class="c-3"><p id="num-7" onclick="place7()">7</p><p id="num-8" onclick="place8()">8</p><p id="num-9" onclick="place9()">9</p></div> 
+            </div>
+            <h1>Player : <p id="splay">X</p></h1>
         </div>
-    </div>
-    <div class="result">
-        <p id="result"></p>
+        <div id="last" class="result">
+            <p id="result"></p>
+            <h2>Thanks for playing my game</h2>
+            <button onclick="location.reload()" id="r-refresh">Refresh</button>
+            <footer>created by mr islam heddi</footer>
+        </div>
     </div>
 </body>
 </html>
